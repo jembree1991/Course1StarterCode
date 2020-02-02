@@ -1,5 +1,6 @@
 package module5;
 
+import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.marker.SimplePointMarker;
 import processing.core.PGraphics;
@@ -46,6 +47,12 @@ public abstract class CommonMarker extends SimplePointMarker {
 			}
 		}
 	}
+
+	@Override
+	public boolean isInside(UnfoldingMap unfoldingMap, float v, float v1) {
+		return super.isInside(unfoldingMap, v, v1);
+	}
+
 	public abstract void drawMarker(PGraphics pg, float x, float y);
 	public abstract void showTitle(PGraphics pg, float x, float y);
 }
